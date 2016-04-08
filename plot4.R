@@ -8,7 +8,7 @@ table <- table[(table$Date == "2007-02-01") | (table$Date == "2007-02-02"),]
 table$DateTime <- as.POSIXct(paste(table$Date, table$Time))
 
 png("plot4.png", width=480, height=480)
-par(mfrow=c(2,2), mar=c(2,4,2,1))
+par(mfrow=c(2,2))
 plot(table$Global_active_power~table$DateTime, type="l", ylab = "Global Active Power", xlab="")
 plot(table$Voltage~table$DateTime, type="l", ylab = "Voltage", xlab="datetime")
 with(table, {plot(table$Sub_metering_1~table$DateTime, type="l", col="black", xlab="", ylab = "Energy Sub metering")
